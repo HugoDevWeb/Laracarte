@@ -6,10 +6,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-5">
-                <li class="nav-item">
+                <li class="nav-item {{ set_active_route('home') }}">
                     <a class="nav-link" href="{{ action('PageController@home') }}">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ set_active_route('about') }}">
                     <a class="nav-link" href="{{ action('PageController@about') }}">About</a>
                 </li>
                 <li class="nav-item">

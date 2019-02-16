@@ -2,6 +2,6 @@
 
 @section('content')
     <div class="container">
-    <h1 class="text-center mb-5">Map here !</h1>
+    <h2 class="mb-5">Map here !</h2>
     </div>
 @stop
