@@ -16,7 +16,6 @@ Route::get('/', [
     'uses' => 'PageController@home',
 ]);
 
-Route::get('/about',[
-    'as' => 'about',
-    'uses' => 'PageController@about',
-]);
+//Différente syntax, meme résultat
+
+Route::get('/about', 'PageController@about')->name('about');
