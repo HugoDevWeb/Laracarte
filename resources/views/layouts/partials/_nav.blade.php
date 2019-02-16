@@ -1,6 +1,6 @@
 <nav class="navbar position-static navbar-expand-lg navbar-light bg-white fixed-top shadow p-3 mb-5 bg-white rounded">
     <div class="container">
-        <a class="navbar-brand" href="{{ action('PageController@home') }}">Laracarte</a>
+        <a class="navbar-brand" href="{{ action('PageController@home') }}">{{ config('app.name') }}</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
