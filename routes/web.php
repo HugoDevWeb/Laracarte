@@ -19,3 +19,5 @@ Route::get('/', [
 //Différente syntax, meme résultat
 
 Route::get('/about', 'PageController@about')->name('about');
+
+Route::get('/contact', 'ContactController@create')->name('contact');

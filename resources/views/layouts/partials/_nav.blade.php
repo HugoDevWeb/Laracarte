@@ -28,8 +28,8 @@
                         <a class="dropdown-item" href="https://larachat.co/">Larachat</a>
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
+                <li class="nav-item {{ set_active_route('contact') }}">
+                    <a class="nav-link " href="{{ action('ContactController@create') }}">Contact</a>
                 </li>
             </ul>
 
