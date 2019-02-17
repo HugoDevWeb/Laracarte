@@ -1,5 +1,15 @@
-<p>{{ $name }}</p>
-<p>{{ $email }}</p>
-<p>{{ $msg }}</p>
+@component('mail::message')
+    # Hey Hugo
+
+    From :{{ $name }}
+    Email :{{ $email }}
 
 
+
+@component('mail::panel')
+    {{ $msg }}
+@endcomponent
+
+Thanks,<br>
+{{ config('app.name') }}
+@endcomponent

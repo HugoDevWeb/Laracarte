@@ -11,7 +11,8 @@
 |
 */
 
-use App\Mail\ContactMessageCreated;
+use App\Mail\ContactMessage;
+
 
 Route::get('/', [
     'as' => 'home',
@@ -26,8 +27,10 @@ Route::get('/contact', 'ContactController@create')->name('contact.create');
 
 Route::post('/contact', 'ContactController@store')->name('contact.store');
 
+
 Route::get('/test-email', function (){
-    return new ContactMessageCreated('hugo', 'hugolavergne0@gmail.com', 'le contenu du message');
+    return new ContactMessage('hugo', 'hugolavergne0@gmail.com', 'le contenu du message');
+
 });
 
 
