@@ -5,26 +5,36 @@
         <div class="row">
             <div class="col-md-8 offset-md-2 ">
                 <h2>Get in Touch</h2>
-                <p class="text-muted">If you having trouble with this service, please <a href="mailto:hugolavergne0@gmail.com">ask for help</a></p>
+                <p class="text-muted">If you having trouble with this service, please <a
+                            href="mailto:hugolavergne0@gmail.com">ask for help</a></p>
 
-                <form action="#" method="post">
+                <form action="{{ action('ContactController@store') }}" method="post">
+                    {{ csrf_field() }}
+
                     <div class="form-group">
                         <label for="name" class="col-form-label">Name</label>
-                        <input type="text" name="name" id="name" class="form-control" required="required">
+                        <input type="text" id="name" name="name" placeholder="Enter your name"
+                               class="form-control  {{ $errors->has('name') ? 'is-invalid' : '' }}  ">
+                        {!! $errors->first('name', '<span class="invalid-feedback">:message</span>')  !!}
                     </div>
 
                     <div class="form-group">
                         <label for="email" class="col-form-label">Email</label>
-                        <input type="email" name="email" id="email" class="form-control" required="required">
+                        <input type="email" id="email" name="email" placeholder="Enter your email"
+                               class="form-control  {{ $errors->has('email') ? 'is-invalid' : '' }}">
+                        {!! $errors->first('email', '<span class="invalid-feedback">:message</span>')  !!}
                     </div>
 
                     <div class="form-group">
-                        <label for="message" class="col-form-label sr-only">Message</label>
-                        <textarea class="form-control" required name="message" id="message" rows="10" cols="10"></textarea>
+                        <label for="message" class="col-form-label">Message</label>
+                        <textarea id="message" name="message" cols="10" rows="10" placeholder="Enter your message"
+                                  class="form-control {{ $errors->has('message') ? 'is-invalid' : ''}} "></textarea>
+                        {!! $errors->first('message', '<span class="invalid-feedback">:message</span>') !!}
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-dark btn-block">Submit Enquiry <i class="fa fa-angle-double-right"></i></button>
+                        <button type="submit" class="btn btn-dark btn-block">Submit Enquiry <i
+                                    class="fa fa-angle-double-right"></i></button>
                     </div>
                 </form>
             </div>
