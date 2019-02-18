@@ -18,6 +18,7 @@ class ContactController extends Controller
 
     public function store(ContactRequest $request)
     {
+
         $message = Message::create($request->only('name', 'email', 'message'));
         Mail::to( config('laracarte.admin_support_email'))->send(new ContactMessage($message));
         flashy()->success('Votre mail a été envoyé avec succès !');
