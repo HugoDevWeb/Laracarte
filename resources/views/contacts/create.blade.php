@@ -6,7 +6,7 @@
             <div class="col-lg-10 offset-lg-1 col-10 offset-1 ">
                 <h2>Get in Touch</h2>
                 <p class="text-muted">If you having trouble with this service, please <a
-                            href="mailto:hugo.lavergne@devinci.fr">ask for help</a></p>
+                            href="mailto:{{ config('laracarte.admin_support_email') }}">ask for help</a></p>
 
                 <form action="{{ action('ContactController@store') }}" method="post">
                     {{ csrf_field() }}
@@ -26,10 +26,10 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="msg" class="col-form-label">Message</label>
-                        <textarea id="msg" name="msg" cols="10" rows="10" placeholder="Enter your message"
-                                  class="form-control {{ $errors->has('msg') ? 'is-invalid' : ''}} "></textarea>
-                        {!! $errors->first('msg', '<span class="invalid-feedback">:message</span>') !!}
+                        <label for="message" class="col-form-label">Message</label>
+                        <textarea id="message" name="message" cols="10" rows="10" placeholder="Enter your message"
+                                  class="form-control {{ $errors->has('message') ? 'is-invalid' : ''}} "></textarea>
+                        {!! $errors->first('message', '<span class="invalid-feedback">:message</span>') !!}
                     </div>
 
                     <div class="form-group">

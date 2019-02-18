@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\Message;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
@@ -10,8 +11,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class ContactMessage extends Mailable
 {
     use Queueable, SerializesModels;
-    public $name;
-    public $email;
+  
     public $msg;
 
     /**
@@ -21,10 +21,8 @@ class ContactMessage extends Mailable
      * @param $email
      * @param $msg
      */
-    public function __construct($name, $email, $msg)
+    public function __construct(Message $msg)
     {
-        $this->name = $name;
-        $this->email = $email;
         $this->msg = $msg;
     }
 

@@ -1,13 +1,13 @@
 @component('mail::message')
     # Hey Hugo
 
-    From :{{ $name }}
-    Email :{{ $email }}
+    From :{{ $msg->name }}
+    Email :{{ $msg->email }}
 
 
 
 @component('mail::panel')
-    {{ $msg }}
+    {{ $msg->message }}
 @endcomponent
 
 Thanks,<br>

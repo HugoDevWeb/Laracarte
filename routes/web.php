@@ -28,9 +28,9 @@ Route::get('/contact', 'ContactController@create')->name('contact.create');
 Route::post('/contact', 'ContactController@store')->name('contact.store');
 
 
-Route::get('/test-email', function (){
-    return new ContactMessage('hugo', 'hugolavergne0@gmail.com', 'le contenu du message');
-
-});
+//Route::get('/test-email', function (){
+//    return new ContactMessage('hugoazeaz az eaz a az ');
+//
+//});
 
 
