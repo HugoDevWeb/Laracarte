@@ -2,6 +2,8 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Message;
+use Carbon\Carbon;
 use Illuminate\Console\Command;
 
 class CleanDatabase extends Command
@@ -37,6 +39,8 @@ class CleanDatabase extends Command
      */
     public function handle()
     {
-        $this->info('clean database');
+        $this->info('Cleaning database...');
+        Message::where('created_at', '>=' , Carbon::parse('1 month ago'))->delete();
+        $this->info('Database cleaned.');
     }
 }
